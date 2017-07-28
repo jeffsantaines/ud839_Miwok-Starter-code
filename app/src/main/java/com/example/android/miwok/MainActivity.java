@@ -32,27 +32,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openNumbers (View v){
-        Intent i = new Intent(this, NumbersActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(this, NumbersActivity.class);
+        startActivity(intent);
 
     }
 
 
     public void openColors (View v){
-        Intent i = new Intent(this, ColorsActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(this, ColorsActivity.class);
+        startActivity(intent);
 
     }
 
     public void openFamily (View v){
-        Intent i = new Intent(this, FamilyActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(this, FamilyActivity.class);
+        startActivity(intent);
 
     }
 
     public void openPhrases (View v){
-        Intent i = new Intent(this, PhrasesActivity.class);
-        startActivity(i);
+        Intent intent = new Intent(this, PhrasesActivity.class);
+        startActivity(intent);
 
     }
 }
