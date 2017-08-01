@@ -20,7 +20,7 @@ public class NumbersActivity extends AppCompatActivity {
         //Create an array of English words from one to ten
         ArrayList<String> englishWords = new ArrayList<>(Arrays.asList(
                 "one", "two", "three", "four", "five", "six",
-                "seven", "eight", "nine", "10"));
+                "seven", "eight", "nine", "ten"));
 
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, englishWords);
         ListView listView = (ListView) findViewById(R.id.list);
