@@ -1,22 +1,17 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
-import static android.R.attr.id;
 
 
 /**
@@ -27,9 +22,12 @@ import static android.R.attr.id;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
+    private int mColorResourceId;
 
-    public WordAdapter(Activity context, ArrayList<Word> wordArrayList) {
+
+    public WordAdapter(Activity context, ArrayList<Word> wordArrayList, int resourceColorId) {
         super(context, 0, wordArrayList);
+        this.mColorResourceId = resourceColorId;
     }
 
     /**
@@ -68,6 +66,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
         } else {
             iconImageView.setVisibility(View.GONE);
         }
+
+        //Set the theme color for the list item
+        View textContainer = listItemView.findViewById(R.id.textView_linear_layout);
+        int color = ContextCompat.getColor(getContext(), mColorResourceId);
+        textContainer.setBackgroundColor(color);
+
+
         return listItemView;
     }
 }
