@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+              android:id="@+id/list_item"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:id="@+id/list_item"
-              android:paddingLeft="16dp"
-              android:paddingTop="16dp">
+              android:orientation="horizontal">
 
-    <TextView
+    <ImageView
+        android:id="@+id/myIcon"
+        android:layout_width="@dimen/icon_side"
+        android:layout_height="@dimen/icon_side"
+        android:background="@color/tan_background"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/textView_linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/miwokNumbers_textView"/>
+        android:layout_height="@dimen/list_item_height"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/englishNumbers_textView"/>
+        <TextView
+            android:id="@+id/miwokNumbers_textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:layout_gravity="bottom"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
+        <TextView
+            android:id="@+id/englishNumbers_textView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:layout_gravity="top"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
 
 </LinearLayout>

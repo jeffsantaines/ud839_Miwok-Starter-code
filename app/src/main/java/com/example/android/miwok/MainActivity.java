@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-        final TextView numbers  = (TextView) findViewById(R.id.numbers);
-        TextView colors =(TextView) findViewById(R.id.colors);
+        final TextView numbers = (TextView) findViewById(R.id.numbers);
+        TextView colors = (TextView) findViewById(R.id.colors);
         TextView family = (TextView) findViewById(R.id.family);
         TextView phrases = (TextView) findViewById(R.id.phrases);
 
