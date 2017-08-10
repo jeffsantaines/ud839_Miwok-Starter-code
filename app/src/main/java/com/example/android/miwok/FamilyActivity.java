@@ -1,8 +1,11 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -38,6 +41,21 @@ public class FamilyActivity extends AppCompatActivity {
         resourceDrawableId.add(R.drawable.family_grandmother);
         resourceDrawableId.add(R.drawable.family_grandfather);
 
+        final ArrayList<Integer> resourceRawId = new ArrayList<>();
+        resourceRawId.add(R.raw.family_father);
+        resourceRawId.add(R.raw.family_mother);
+        resourceRawId.add(R.raw.family_son);
+        resourceRawId.add(R.raw.family_daughter);
+        resourceRawId.add(R.raw.family_older_brother);
+        resourceRawId.add(R.raw.family_younger_brother);
+        resourceRawId.add(R.raw.family_older_sister);
+        resourceRawId.add(R.raw.family_younger_sister);
+        resourceRawId.add(R.raw.family_grandmother);
+        resourceRawId.add(R.raw.family_grandfather);
+
+
+
+
         //instantiate our ArrayList of the class "Word"
         ArrayList<Word> words = new ArrayList<>();
         for (int i = 0; i < miwokWords.size(); i++) {
@@ -47,6 +65,14 @@ public class FamilyActivity extends AppCompatActivity {
         WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_family);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                MediaPlayer mMediaPlayer = MediaPlayer.create(FamilyActivity.this, resourceRawId.get(position));
+                mMediaPlayer.start();
+            }
+        });
 
     }
 }

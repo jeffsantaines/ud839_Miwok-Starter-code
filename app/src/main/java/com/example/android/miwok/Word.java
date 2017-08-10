@@ -26,7 +26,7 @@ public class Word {
     }
 
 
-    //constructor with 3 parameters
+    //constructor with 4 parameters
     public Word(String miwokTranslation, String defaultTranslation, int imageResourceId) {
         this.mMiwokTranslation = miwokTranslation;
         this.mDefaultTranslation = defaultTranslation;
@@ -65,4 +65,5 @@ public class Word {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 
+    
 }

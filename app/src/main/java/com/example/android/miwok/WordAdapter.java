@@ -24,7 +24,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     private int mColorResourceId;
 
-
+    //constructor
     public WordAdapter(Activity context, ArrayList<Word> wordArrayList, int resourceColorId) {
         super(context, 0, wordArrayList);
         this.mColorResourceId = resourceColorId;
