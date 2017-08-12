@@ -65,5 +65,5 @@ public class Word {
         return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 
-    
+
 }
