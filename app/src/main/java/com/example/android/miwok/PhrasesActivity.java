@@ -22,6 +22,12 @@ public class PhrasesActivity extends AppCompatActivity {
         }
     };
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
@@ -54,7 +60,7 @@ public class PhrasesActivity extends AppCompatActivity {
         //instantiate our ArrayList of the class "Word"
         ArrayList<Word> words = new ArrayList<>();
         for (int i = 0; i < miwokWords.size(); i++) {
-            words.add(new Word(miwokWords.get(i), englishWords.get(i)));
+            words.add(new Word(miwokWords.get(i), englishWords.get(i), resourceRawId.get(i)));
         }
 
         WordAdapter itemsAdapter = new WordAdapter(this, words, R.color.category_phrases);
